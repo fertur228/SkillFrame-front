@@ -1,0 +1,41 @@
+{
+  "common": {
+    "welcome": "Добро пожаловать",
+    "logout": "Выйти",
+    "login": "Войти",
+    "email": "Email",
+    "password": "Пароль",
+    "rememberMe": "Запомнить меня",
+    "submit": "Отправить",
+    "loading": "Загрузка...",
+    "noData": "Нет данных",
+    "comingSoon": "Раздел в разработке"
+  },
+  "navigation": {
+    "dashboard": "Дэшборд",
+    "schedule": "Расписание",
+    "attendance": "Посещаемость",
+    "lessons": "Уроки",
+    "grades": "Оценки",
+    "users": "Пользователи",
+    "reports": "Отчеты"
+  },
+  "auth": {
+    "title": "SkillFrame",
+    "loginSubtitle": "Войдите, чтобы продолжить",
+    "forgotLink": "Забыли пароль?",
+    "noAccount": "Нет аккаунта? Обратитесь к администратору.",
+    "forgotTitle": "Восстановление доступа",
+    "forgotDescription": "Укажите email, и мы отправим инструкции.",
+    "resetTitle": "Сброс пароля",
+    "resetDescription": "Введите новый пароль"
+  },
+  "dashboard": {
+    "upcomingLessons": "Ближайшие уроки",
+    "notifications": "Уведомления"
+  },
+  "errors": {
+    "forbidden": "Доступ запрещен",
+    "notFound": "Страница не найдена"
+  }
+}

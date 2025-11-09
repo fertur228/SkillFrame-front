@@ -1,0 +1,41 @@
+{
+  "common": {
+    "welcome": "ようこそ",
+    "logout": "ログアウト",
+    "login": "ログイン",
+    "email": "メール",
+    "password": "パスワード",
+    "rememberMe": "記憶する",
+    "submit": "送信",
+    "loading": "読み込み中...",
+    "noData": "データがありません",
+    "comingSoon": "開発中のモジュールです"
+  },
+  "navigation": {
+    "dashboard": "ダッシュボード",
+    "schedule": "スケジュール",
+    "attendance": "出席",
+    "lessons": "授業",
+    "grades": "成績",
+    "users": "ユーザー",
+    "reports": "レポート"
+  },
+  "auth": {
+    "title": "SkillFrame",
+    "loginSubtitle": "続行するにはログインしてください",
+    "forgotLink": "パスワードをお忘れですか？",
+    "noAccount": "アカウントが必要ですか？管理者に連絡してください。",
+    "forgotTitle": "パスワードの復元",
+    "forgotDescription": "メールアドレスを入力すると、手順を送信します。",
+    "resetTitle": "パスワードをリセット",
+    "resetDescription": "新しいパスワードを入力してください"
+  },
+  "dashboard": {
+    "upcomingLessons": "次の授業",
+    "notifications": "通知"
+  },
+  "errors": {
+    "forbidden": "アクセス拒否",
+    "notFound": "ページが見つかりません"
+  }
+}

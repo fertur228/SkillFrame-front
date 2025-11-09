@@ -1,0 +1,41 @@
+{
+  "common": {
+    "welcome": "Қош келдіңіз",
+    "logout": "Шығу",
+    "login": "Кіру",
+    "email": "Email",
+    "password": "Құпия сөз",
+    "rememberMe": "Есте сақтау",
+    "submit": "Жіберу",
+    "loading": "Жүктелуде...",
+    "noData": "Деректер жоқ",
+    "comingSoon": "Модуль әзірленуде"
+  },
+  "navigation": {
+    "dashboard": "Бақылау тақтасы",
+    "schedule": "Кесте",
+    "attendance": "Қатысу",
+    "lessons": "Сабақтар",
+    "grades": "Бағалар",
+    "users": "Пайдаланушылар",
+    "reports": "Есептер"
+  },
+  "auth": {
+    "title": "SkillFrame",
+    "loginSubtitle": "Жалғастыру үшін кіріңіз",
+    "forgotLink": "Құпия сөзді ұмыттыңыз ба?",
+    "noAccount": "Тіркелгі керек пе? Әкімшіге хабарласыңыз.",
+    "forgotTitle": "Құпия сөзді қалпына келтіру",
+    "forgotDescription": "Email енгізіңіз, біз нұсқаулық жібереміз.",
+    "resetTitle": "Құпия сөзді жаңарту",
+    "resetDescription": "Жаңа құпия сөз енгізіңіз"
+  },
+  "dashboard": {
+    "upcomingLessons": "Алдағы сабақтар",
+    "notifications": "Хабарламалар"
+  },
+  "errors": {
+    "forbidden": "Қол жеткізу жабық",
+    "notFound": "Бет табылмады"
+  }
+}
