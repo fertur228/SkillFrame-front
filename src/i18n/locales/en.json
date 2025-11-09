@@ -1,0 +1,41 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "logout": "Sign out",
+    "login": "Log in",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "noData": "No data",
+    "comingSoon": "Module under construction"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "schedule": "Schedule",
+    "attendance": "Attendance",
+    "lessons": "Lessons",
+    "grades": "Grades",
+    "users": "Users",
+    "reports": "Reports"
+  },
+  "auth": {
+    "title": "SkillFrame",
+    "loginSubtitle": "Sign in to continue",
+    "forgotLink": "Forgot password?",
+    "noAccount": "Need an account? Contact your administrator.",
+    "forgotTitle": "Password recovery",
+    "forgotDescription": "Provide your email and we will send instructions.",
+    "resetTitle": "Reset password",
+    "resetDescription": "Enter a new password"
+  },
+  "dashboard": {
+    "upcomingLessons": "Upcoming lessons",
+    "notifications": "Notifications"
+  },
+  "errors": {
+    "forbidden": "Access denied",
+    "notFound": "Page not found"
+  }
+}

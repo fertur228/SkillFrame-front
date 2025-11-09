@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# SkillFrame Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Фронтенд-проект на базе Create React App + TypeScript для интеграции с бэкендом SkillFrame.
 
-## Available Scripts
+## Быстрый старт
 
-In the project directory, you can run:
+1. Установите зависимости:
+   ```bash
+   npm install
+   ```
+2. Создайте файл `.env` (пример уже в репозитории) и укажите базовый URL API:
+   ```bash
+   REACT_APP_API_BASE_URL=http://localhost:8080
+   ```
+3. Запустите приложение в режиме разработки:
+   ```bash
+   npm start
+   ```
+   Приложение будет доступно по адресу [http://localhost:3000](http://localhost:3000).
 
-### `npm start`
+## Технологический стек
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 19 + TypeScript
+- React Router v7
+- Zustand (сохранение auth-состояния)
+- @tanstack/react-query (работа с запросами)
+- Axios (HTTP-клиент)
+- Tailwind CSS (стили)
+- i18next (локализация ru/kk/ja/en)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Структура `src`
 
-### `npm test`
+```
+src/
+  app/
+    guards/        // Гварды маршрутов (RequireAuth, RequireRole)
+    query/         // Настройка React Query
+    router/        // Конфигурация маршрутизации
+    store/         // Zustand-хранилища (auth, ui)
+  components/
+    layout/        // Sidebar, Topbar, AppLayout
+    ui/            // Базовые UI-компоненты (Button, Input, Table, Modal)
+  i18n/            // Настройка i18next и локализации
+  pages/           // Страницы модулей (auth, dashboard, schedule, ...)
+  services/
+    api/           // Axios-инстанс и модули API (auth, users, ...)
+    types/         // DTO (заглушки, требуют уточнения по бэкенду)
+  styles/          // Tailwind-стили
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Таблица задействованных эндпоинтов (по текущей интеграции фронта)
 
-### `npm run build`
+| Модуль | Метод | Путь | Примечание |
+| --- | --- | --- | --- |
+| Auth | POST | `/auth/login` | Авторизация пользователя (нужна проверка DTO) |
+| Auth | POST | `/auth/refresh` | TODO: подтвердить существование и контракт |
+| Auth | POST | `/auth/logout` | TODO: подтвердить существование |
+| Users | GET | `/users/me` | Загрузка профиля текущего пользователя |
+| Users | GET | `/users` | Список пользователей (параметры требуют уточнения) |
+| Users | POST | `/users` | Создание пользователя (контракт неизвестен) |
+| Users | PUT | `/users/{id}` | Обновление пользователя |
+| Users | DELETE | `/users/{id}` | Удаление пользователя |
+| Schedule | GET | `/schedule` | Получение расписания |
+| Schedule | GET | `/schedule/{id}` | Детали события |
+| Schedule | POST | `/schedule` | Создание/редактирование (контракт не подтверждён) |
+| Schedule | PUT | `/schedule/{id}` | Обновление |
+| Schedule | DELETE | `/schedule/{id}` | Удаление |
+| Attendance | GET | `/attendance` | Список отметок посещаемости |
+| Attendance | PATCH | `/attendance/{id}` | Обновление статуса |
+| Lessons | GET | `/lessons` | Список уроков |
+| Lessons | GET | `/lessons/{id}` | Детали урока |
+| Lessons | POST | `/lessons` | Создание урока (контракт не подтверждён) |
+| Lessons | PUT | `/lessons/{id}` | Обновление |
+| Grades | GET | `/grades` | Журнал оценок |
+| Grades | PUT | `/grades/{id}` | Обновление оценки |
+| Reports | GET | `/reports` | Список доступных отчётов |
+| Reports | GET | `/reports/{id}/export` | Выгрузка отчёта (формат уточнить) |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> ⚠️ Из-за отсутствия доступа к бэкенду все контракты требуют подтверждения. В коде оставлены TODO, которые нужно актуализировать после получения спецификации/Swagger.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Что дальше
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Получить доступ к бэкенду и обновить `BACKEND_AUDIT.md` фактическими данными.
+- Сгенерировать типы и полноценный клиент из OpenAPI (или вручную на основе DTO бэкенда).
+- Реализовать обработку `refresh`-токена и уведомлений об ошибках (тоасты).
+- Наполнить страницы формами/модалами для CRUD-операций по фактическим API.
+- Добавить тесты и визуальные регрессии после стабилизации контрактов.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
